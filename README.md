@@ -1,51 +1,32 @@
-## Technology Stack
+# Project Management App 🧩
 
-- **Frontend**: Next.js, Tailwind CSS, Redux Toolkit, Redux Toolkit Query, Material UI Data Grid
-- **Backend**: Node.js with Express, Prisma (PostgreSQL ORM)
-- **Database**: PostgreSQL, managed with PgAdmin
-- **Cloud**: AWS EC2, AWS RDS, AWS API Gateway, AWS Amplify, AWS S3, AWS Lambda, AWS Cognito
+A full-stack project management application that allows users to register, sign in with Cognito, and manage their team and projects — complete with user profiles and team assignments.
 
-## Getting Started
+![image](https://github.com/user-attachments/assets/f2fd76f6-0461-4862-8851-0e62217b9223)
 
-### Prerequisites
 
-Ensure you have these tools installed:
+---
 
-- Git
-- Node.js
-- npm (Node Package Manager)
-- PostgreSQL ([download](https://www.postgresql.org/download/))
-- PgAdmin ([download](https://www.pgadmin.org/download/))
+## 🚀 Features
 
-### Installation Steps
+- 🔐 User authentication via AWS Cognito
+- 🧑‍💼 Automatic user creation via API trigger after signup
+- 🗂️ Team & user management
+- 📦 Backend with Node.js, Express, and PostgreSQL (via Prisma)
+- 🌐 Frontend built with Next.js
+- ☁️ AWS integrations: Cognito, Lambda, S3, API Gateway
 
-1. Clone the repository:
-   `git clone [git url]`
-   `cd project-management`
+---
 
-2. Install dependencies in both client and server:
-   `cd client`
-   `npm i`
-   `cd ..`
-   `cd server`
-   `npm i`
+## 🛠️ Tech Stack
 
-3. Set up the database:
-   `npx prisma generate`
-   `npx prisma migrate dev --name init`
-   `npm run seed`
+- **Frontend:** Next.js, React, Tailwind CSS
+- **Backend:** Node.js, Express.js
+- **Database:** PostgreSQL (with Prisma ORM)
+- **Auth:** AWS Cognito
+- **Cloud:** AWS Lambda, API Gateway, S3
+- **Deployment:** Vercel (frontend), Render/AWS (backend)
 
-4. Configure environment variables:
+---
 
-- `.env` for server settings (PORT, DATABASE_URL)
-- `.env.local` for client settings (NEXT_PUBLIC_API_BASE_URL)
 
-5. Run the project
-   `npm run dev`
-
-### Database Management Commands
-
-- Command for resetting ID in database:
-  ```sql
-  SELECT setval(pg_get_serial_sequence('"[DATA_MODEL_NAME_HERE]"', 'id'), coalesce(max(id)+1, 1), false) FROM "[DATA_MODEL_NAME_HERE]";
-  ```
